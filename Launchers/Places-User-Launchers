@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Places User Launchers
+Exec=pcmanfm ~/.local/share/applications
+StartupNotify=true
+Icon=system-file-manager
+MimeType=inode/directory;

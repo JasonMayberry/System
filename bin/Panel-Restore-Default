@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat /dev/null > ~/.config/lxpanel/Lubuntu/panels/panel
+lxpanelctl restart

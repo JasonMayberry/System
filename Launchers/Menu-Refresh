@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=lxpanelctl restart
+Terminal=true
+GenericName=Refresh Reload Menu
+Comment[en_US]=Refresh Reload Menu
+StartupNotify=false
+Icon=grsync

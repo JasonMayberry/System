@@ -1,0 +1,71 @@
+#!/bin/bash
+
+title="Select the quality you would like compress-pdf to output."
+prompt="Pick an option:"
+options=('screen (low)' 'ebook (medium-low)' 'printer (medium-high)' 'prepress (high)')
+
+echo "Your original file will not be compressed or changed in any way."
+echo "A compressed version will be generated in the same folder."
+echo "$title"
+PS3="$prompt "
+select opt in "${options[@]}" "Quit"; do 
+
+    case "$REPLY" in
+
+    1 ) echo "Pick a .pdf file to Compress"
+        sleep 1
+        file="$(zenity --title "Pick a .pdf file to Compress" --file-selection 2> /dev/null)"
+        clear
+        echo ""
+        echo "Compressing \"${file//*\/}\" to \"$opt quality\" With:"
+        echo ""
+        sleep 1
+        no_spaces="${file/.pdf/}-compressed.pdf"
+        eval "gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${opt// (*/} -sOutputFile=${no_spaces// /-} \"$file\""
+        break
+        ;;
+    2 ) echo "Pick a .pdf file to Compress"
+        sleep 1
+        file="$(zenity --title "Pick a .pdf file to Compress" --file-selection 2> /dev/null)"
+        clear
+        echo ""
+        echo "Compressing \"${file//*\/}\" to \"$opt quality\" With:"
+        echo ""
+        sleep 1
+        no_spaces="${file/.pdf/}-compressed.pdf"
+        eval "gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${opt// (*/} -sOutputFile=${no_spaces// /-} \"$file\""
+        break
+        ;;
+    3 ) echo "Pick a .pdf file to Compress"
+        sleep 1
+        file="$(zenity --title "Pick a .pdf file to Compress" --file-selection 2> /dev/null)"
+        clear
+        echo ""
+        echo "Compressing \"${file//*\/}\" to \"$opt quality\" With:"
+        echo ""
+        sleep 1
+        no_spaces="${file/.pdf/}-compressed.pdf"
+        eval "gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${opt// (*/} -sOutputFile=${no_spaces// /-} \"$file\""
+        break
+        ;;
+    4 ) echo "Pick a .pdf file to Compress"
+        sleep 1
+        file="$(zenity --title "Pick a .pdf file to Compress" --file-selection 2> /dev/null)"
+        clear
+        echo ""
+        echo "Compressing \"${file//*\/}\" to \"$opt quality\" With:"
+        echo ""
+        sleep 1
+        no_spaces="${file/.pdf/}-compressed.pdf"
+        eval "gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${opt// (*/} -sOutputFile=${no_spaces// /-} \"$file\""
+        break
+        ;;
+
+
+    $(( ${#options[@]}+1 )) ) echo "Goodbye!"; break;;
+    *) echo "Invalid option. Try another one.";continue;;
+
+    esac
+
+done
+

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Places Filesystem Root
+Exec=pcmanfm admin:///
+StartupNotify=true
+Icon=system-file-manager
+MimeType=inode/directory;

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Places Home    
+Exec=pcmanfm 
+StartupNotify=true
+Icon=system-file-manager
+MimeType=inode/directory;

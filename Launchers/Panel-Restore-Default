@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=Panel-Restore-Default
+Terminal=true
+GenericName=Restore the lower Panels Default Settings
+Comment[en_US]=Restore the lower Panels Default Settings
+StartupNotify=true
+Name[en_US]=Panel Restore Default
+Icon=grsync

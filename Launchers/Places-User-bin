@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Places User bin
+Exec=pcmanfm ~/bin
+StartupNotify=true
+Icon=system-file-manager
+MimeType=inode/directory;

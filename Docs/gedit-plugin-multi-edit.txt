@@ -1,0 +1,27 @@
+New gedit plugin: multi edit
+https://blogs.gnome.org/jessevdk/2009/11/15/new-gedit-plugin-multi-edit/
+
+The new plugin introduces a new %u2018mode%u2019 in which you can do multi editing. 
+You enter this mode by Ctrl+Shift+C, and once enabled you can start 
+inserting edit points manually by pressing Ctrl+E at any point in the document. 
+Additionally, you can use Ctrl+Home and Ctrl+End to respectively insert edit 
+points at the beginning or end of the line automatically (it will also skip to 
+the previous/next line so you can quickly insert edit points at the beginning 
+or end of some lines). When you start typing the inserts/deletes will be 
+replicated in all the edit points. You can then press Escape to remove the 
+additional edit points, and press Esc again to finally quit multi edit mode.
+
+In addition to inserting multi edit points, it also features column editing when you are in multi edit mode. This means you can select a part of the text, and press Enter to make the selection into a column selection. When you then start editing, it will edit the whole column (just as if you would have inserted multiple edit points manually and removed the text in the column).
+
+You can watch a short (somewhat lame :)) movie showing this new plugin:
+
+http://people.gnome.org/~jessevdk/multiedit.ogv
+
+Column Editing
+Make a column-delimited selection
+Ctrl+Shift+C - Enable Multi-edit Mode
+Then Press "Enter" after a regular selection
+
+
+
+

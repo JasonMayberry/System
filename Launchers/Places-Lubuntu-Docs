@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Places Lubuntu Docs
+Exec=pcmanfm ~/Lubuntu-Docs
+StartupNotify=true
+Icon=system-file-manager
+MimeType=inode/directory;

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=restartx
+GenericName=Restarts the X Window Server
+Comment[en_US]=Restarts the X Window Server
+Terminal=true
+Icon=grsync

@@ -1,0 +1,10 @@
+# Edit as root files in Lubuntu 18.04
+# Users advised to add admin:// prefix to the path of the file you want to edit.
+# You can use the following command:
+  $ gedit admin:///etc/default/apport
+
+# To open the gui file manager to a specific folder as root:
+  $ pcmanfm admin:///etc/apt
+
+# To open the gui file manager to the file system as root:
+  $ pcmanfm admin:///

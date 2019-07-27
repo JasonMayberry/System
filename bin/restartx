@@ -1,0 +1,47 @@
+#!/bin/bash
+
+cat  <<HEREDOC
+
+How to restart X Window Server from command line?
+I'd really like to be able to restart my GUI without having to do a full system reboot.
+Answer:
+This script will run:
+
+sudo systemctl restart display-manager
+
+This will restart the appropriate display manager service:
+(lightdm till 17.04, gdm3 after, sddm in Kubuntu, etc.)
+
+####################################################################
+####        Try to simply Logout and log back in first!         ####
+####        Close all running programs!                         ####
+####        Save the contents of clipboard if needed!           ####
+####################################################################
+
+NOTE:
+This will forcefully quit all graphical programs, 
+you'll lose any unsaved work including the contents of your clipboard, 
+and you'll be logged out. Non-graphical programs will not be affected.
+HEREDOC
+
+function ask() {
+echo "Would you like to restart the X Window Server now?"
+echo "( y = Yes | n = No )"
+read reply
+
+if [ "$reply" == 'y' ]; then
+    sudo systemctl restart display-manager
+fi
+
+if [ "$reply" == 'n' ]; then
+    echo "No"
+fi
+
+if [[ ( "$reply" != 'y' ) && ( "$reply" != 'n' ) ]]; then
+    echo "Invalid Answer"
+    ask
+fi
+}
+
+ask
+

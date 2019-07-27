@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=gedit-admin
+Name=Gedit-Admin
+GenericName=Edit a file as admin
+Comment[en_US]=Edit a file as admin
+StartupNotify=true
+Terminal=true
+Icon=gedit-icon

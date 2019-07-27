@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=compress-pdf
+Terminal=true
+GenericName=PDF Compresser
+Comment[en_US]=PDF Compresser
+Icon=evince

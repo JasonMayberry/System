@@ -1,0 +1,18 @@
+#!/bin/bash
+
+title="Select a file to edit as admin."
+prompt="Pick a file:"
+echo "$title"
+PS3="$prompt "
+sleep 1
+file="$(zenity --title "Select a file to edit as admin." --file-selection 2> /dev/null)"
+# if [[ $file == *"|"* ]]; then
+# 	all_files=${file//|/ admin:}
+# else
+# 	all_files=$file
+# fi
+# gedit admin://$all_files 2> /dev/null
+gedit admin://$file 2> /dev/null
+echo "done"
+# I could not get the zenity --multiple open multiple files option to work.
+# It may be admin:// that will not allow multiple files to open.

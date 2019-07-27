@@ -1,0 +1,68 @@
+#!/bin/bash
+
+counter=0
+
+
+function add_another() {
+if [[ $counter -gt 0 ]]; then
+    echo ""
+    echo "Would you like to pick another image?"
+fi
+echo "( y = Yes | n = No | q = Quit )"
+read reply
+
+if [ "$reply" == 'y' ]; then
+    image="$(zenity --title "Pick a Image" --file-selection 2> /dev/null)"
+    sudo cp "$image" "/usr/share/lubuntu/wallpapers/${image//*\/}"
+    echo "RUN:$ sudo cp \"$image\" \"/usr/share/lubuntu/wallpapers/${image//*\/}\""
+    (( counter++ ))
+    add_another
+fi
+}
+
+
+function ask() {
+if [[ $counter -eq 0 ]]; then
+    echo ""
+    echo "Would you like to pick an image?"
+fi
+echo "( y = Yes | n = No | q = Quit )"
+read reply
+
+if [ "$reply" == 'y' ]; then
+    image="$(zenity --title "Pick a Image" --file-selection 2> /dev/null)"
+    sudo cp "$image" "/usr/share/lubuntu/wallpapers/${image//*\/}"
+    echo "RUN:$ sudo cp \"$image\" \"/usr/share/lubuntu/wallpapers/${image//*\/}\""
+    (( counter++ ))
+    add_another
+fi
+
+if [ "$reply" == 'n' ]; then
+    echo "Now associate your images with \"lightdm-gtk-greeter-settings-pkexec\""
+    echo "Then Save an Close"
+    lightdm-gtk-greeter-settings-pkexec 2> /dev/null
+    echo "Good job! Now restart the computer."
+    sleep 3
+fi
+
+if [ "$reply" == 'q' ]; then
+    echo "Goodbye!"
+fi
+
+if [[ ( "$reply" != 'y' ) && ( "$reply" != 'n' ) && ( "$reply" != 'q' ) ]]; then
+    echo "Invalid Answer"
+    ask
+fi
+}
+
+
+echo "I will help you change the Wallpaper or Profile Image for your greeter lock screen"
+echo "The Image you pick will be copied into:"
+echo "/usr/share/lubuntu/wallpapers/img-you-pick.jpg"
+echo "The greeter-settings will then open so you can change them."
+
+if [[ $counter -eq 0 ]]; then
+   ask
+fi
+
+

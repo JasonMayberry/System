@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "What would you like the name your new Desktop launcher to be?"
+echo "q to Quit"
+read launcher_name
+lName=${launcher_name// /-}
+
+if [ "$launcher_name" != "q" ]; then
+lxshortcut -i ~/Desktop/$lName 2> /dev/null
+fi
+
+if [ "$launcher_name" == 'q' ]; then
+    echo "Goodbye!"
+fi
+

@@ -1,0 +1,65 @@
+- aptitude
+- brasero
+- chromium-browser
+- chromium-chromedriver
+- chromium-bsu
+- cmatrix
+- converseen
+- fbreader
+- figlet
+- gedit
+- gedit-developer-plugins
+- gedit-plugins
+- zeitgeist
+- geeqie
+- gimp
+- gimp-data-extras
+- gcc-7-locales
+- python-gobject-2-dbg
+- python-gtk2-doc
+- gimp-gmic
+- gimp-help-en
+- gimp-plugin-registry
+- icc-profiles
+- glew-utils
+- libtiff-opengl
+- gscan2pdf
+- gthumb
+- gufw
+- httraqt
+- inkscape add its Suggested packages to this list
+- jp2a
+- libreoffice
+- librole-tiny-perl
+- links
+- links2
+- lyx
+- openclipart-libreoffice
+- openclipart-png
+- pdf2djvu
+- pdfshuffler
+- perl-tk
+- preload
+- qalc
+- retext
+- scribus
+- tree
+- vim
+- vim-gtk3
+- vlc-bin
+- webhttrack
+- zathura
+- gnome-screenshot
+- sysinfo
+- gparted
+- okular
+- photocollage
+- quadrapassel
+
+# Other harder to install packages
+- libdvd-pkg
+- timeshift
+- sublime_text
+- ttf-mscorefonts-installer
+
+
