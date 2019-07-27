@@ -1,2 +1,0 @@
-test3
-Test gedit's terminal intergration!
