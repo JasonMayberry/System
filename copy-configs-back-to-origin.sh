@@ -2,6 +2,7 @@
 
 cp -vp ~/System/configs/.bash_aliases ~/.bash_aliases
 cp -vp ~/System/configs/.bash_aliases.bak ~/.bash_aliases.bak
+cp -vp ~/System/configs/.bashrc ~/.bashrc
 cp -vp ~/System/configs/.bashrc.bak ~/.bashrc.bak
 cp -vp ~/System/configs/.vimrc ~/.vimrc
 cp -vp ~/System/configs/.vimrc.bak ~/.vimrc.bak

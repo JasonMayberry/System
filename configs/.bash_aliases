@@ -85,7 +85,7 @@ what() { echo "Type:"; type $@; echo "What is:"; whatis $@; echo "Policy:"; apt-
 # File Manipulation
 alias mv="mv -v"
 alias rm="rm -v"
-alias cp="cpv -v"
+alias cpv="cp -v"
 # (copy backup) Creates a script to copy files back to the same location they were copied from.
 # cpb () { cp -v $1 $2; echo "cp -vp ${2/~/\~} ${1/~/\~}" | tee -a ~/cpb.sh }
 
@@ -176,4 +176,6 @@ extract() {
     echo "'$1' is not a valid file"
   fi
 }
+
+export PATH="$HOME/bin:$PATH"
 
