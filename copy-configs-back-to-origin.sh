@@ -37,3 +37,9 @@ cp -vp ~/System/configs/trash.dockitem ~/.config/plank/dock1/launchers/trash.doc
 # Manual copy back to origin lines
 cp -vp ~/System/icons-png/jason.png ~/Public/jason.png
 
+cp -vpr ~/System/bin* ~/
+sudo mkdir /usr/local/share/applications
+sudo cp -vp ~/System/dot-desktops/* /usr/local/share/applications/
+cp -vp ~/System/Launchers/* ~/.local/share/applications/
+sudo cp -vp ~/System/icons-png/menu-ubuntu.png /usr/share/lubuntu/images/
+

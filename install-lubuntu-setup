@@ -1,0 +1,148 @@
+#!/bin/bash
+
+# Jason's Install all script
+sudo apt update
+sudo add-apt-repository -y ppa:teejee2008/ppa
+sudo apt-get update
+sudo apt-get -y install timeshift
+sudo apt install -y git
+git clone https://github.com/JasonMayberry/System # Download Lubuntu-Setup
+sudo cp -v ~/System/etc/timeshift.json /etc/timeshift.json
+sudo chown -c root:root /etc/timeshift.json
+sudo chmod -c 644 /etc/timeshift.json
+# Tell Timeshift to take a snapshot of everything before the rest of this script runs.
+sudo timeshift --create --yes
+echo "########################################################"
+echo "###   Timeshift created a snapshot so that you can   ###"
+echo "###   rolback the changes this script is making!     ###"
+echo "########################################################"
+sleep 5
+echo "Preparing to install sublime-text"
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
+sudo apt update
+sudo apt install -y sublime-text
+sudo apt-get install -y ttf-mscorefonts-installer
+sudo apt install -y libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+# Once libdvd-pkg has finished installing, you can walk and let the script do the rest
+echo "############################################################################"
+echo "###   Go get a glass of tea. You will not be asked any more questions!   ###"
+echo "############################################################################"
+sleep 3
+
+
+# Jason's Install all from default repositories script
+sudo apt update
+sudo apt -y upgrade
+# 
+# Background
+sudo apt install -y zeitgeist gcc-7-locales python-gobject-2-dbg python-gtk2-doc icc-profiles glew-utils libtiff-opengl librole-tiny-perl perl-tk preload highlight
+# Internet
+sudo apt install -y chromium-browser chromium-chromedriver links2 
+# Office
+sudo apt install -y fbreader gscan2pdf httraqt libreoffice pdf2djvu pdfshuffler retext scribus webhttrack okular 
+# Programing
+sudo apt install -y gedit gedit-plugins vim-gtk3 
+# Games
+sudo apt install -y chromium-bsu quadrapassel 
+# Graphics
+sudo apt install -y converseen geeqie gimp gimp-data-extras gimp-gmic gimp-help-en gimp-plugin-registry gthumb inkscape openclipart-libreoffice openclipart-png gnome-screenshot photocollage 
+# Multimedia
+sudo apt install -y vlc-bin simplescreenrecorder 
+# Terminal only
+sudo apt install -y aptitude cmatrix figlet jp2a links qalc tree vim zathura zenity 
+# Utilitys
+sudo apt install -y brasero gufw sysinfo gparted 
+# Wallpaper
+sudo apt-get -y install ubuntu-wallpapers-* edgy-wallpapers feisty-wallpapers gutsy-wallpapers 
+
+# Theme
+# Add plank to dock field and manual auto start
+# Press "Ctrl + Right Click" on the plank to access context menu.
+# plank --preferences # in terminal
+    sudo apt install -y plank
+
+# Run xcompmgr = alt+F2, type xcompmgr
+# Add xcompmgr to manual auto start
+    sudo apt install -y xcompmgr
+    sudo add-apt-repository -y ppa:noobslab/themes
+    sudo add-apt-repository -y ppa:noobslab/icons
+    sudo apt update
+    sudo apt install -y arc-theme arc-icons
+# MacBuntu 18.04 Transformation Pack Ready For Ubuntu 18.04 Bionic Beaver
+# https://www.noobslab.com/2018/08/macbuntu-1804-transformation-pack-ready.html
+    sudo add-apt-repository -y ppa:noobslab/macbuntu
+    sudo apt-get update
+    sudo apt-get install -y macbuntu-os-icons-v1804
+    sudo apt-get install -y macbuntu-os-ithemes-v1804
+    sudo apt-get install -y slingscold
+    sudo apt-get install -y albert
+    sudo apt-get install -y macbuntu-os-plank-theme-v1804
+    wget -O mac-fonts.zip http://drive.noobslab.com/data/Mac/macfonts.zip
+    sudo unzip mac-fonts.zip -d /usr/share/fonts; rm mac-fonts.zip
+    sudo fc-cache -f -v
+
+    sudo apt-get install -y gnome-tweak-tool
+# Once gnome-tweak-tools is installed, you can run it from the terminal writing:
+# gnome-tweaks # in terminal
+# You can change fonts from Unity-Tweak-Tool, Gnome-Tweak-Tool.
+
+sudo apt -y autoremove
+
+# Settings
+sudo ufw enable # enable the firewall
+
+# Install Lubuntu-Setup
+cp -vp ~/System/configs/.bash_aliases ~/.bash_aliases
+cp -vp ~/System/configs/.bash_aliases.bak ~/.bash_aliases.bak
+cp -vp ~/System/configs/.bashrc ~/.bashrc
+cp -vp ~/System/configs/.bashrc.bak ~/.bashrc.bak
+cp -vp ~/System/configs/.vimrc ~/.vimrc
+cp -vp ~/System/configs/.vimrc.bak ~/.vimrc.bak
+cp -vp ~/System/configs/albert.conf ~/.config/albert.conf
+cp -vp ~/System/configs/Trolltech.conf ~/.config/Trolltech.conf
+cp -vp ~/System/configs/user-dirs.dirs ~/.config/user-dirs.dirs
+cp -vp ~/System/configs/user-dirs.locale ~/.config/user-dirs.locale
+cp -vp ~/System/configs/user ~/.config/dconf/user
+cp -vp ~/System/configs/accels ~/.config/gedit/accels
+cp -vp ~/System/configs/gtkfilechooser.ini ~/.config/gtk-2.0/gtkfilechooser.ini
+cp -vp ~/System/configs/bookmarks ~/.config/gtk-3.0/bookmarks
+cp -vp ~/System/configs/settings.ini ~/.config/gtk-3.0/settings.ini
+cp -vp ~/System/configs/leafpadrc ~/.config/leafpad/leafpadrc
+cp -vp ~/System/configs/libfm.conf ~/.config/libfm/libfm.conf
+cp -vp ~/System/configs/launchtaskbar.cfg ~/.config/lxpanel/launchtaskbar.cfg
+cp -vp ~/System/configs/config ~/.config/lxpanel/Lubuntu/config
+cp -vp ~/System/configs/panel ~/.config/lxpanel/Lubuntu/panels/panel
+cp -vp ~/System/configs/autostart ~/.config/lxsession/Lubuntu/autostart
+cp -vp ~/System/configs/desktop.conf ~/.config/lxsession/Lubuntu/desktop.conf
+cp -vp ~/System/configs/settings.conf ~/.config/lxsession-default-apps/settings.conf
+cp -vp ~/System/configs/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
+cp -vp ~/System/configs/lubuntu-rc.xml ~/.config/openbox/lubuntu-rc.xml
+cp -vp ~/System/configs/desktop-items-0.conf ~/.config/pcmanfm/lubuntu/desktop-items-0.conf
+cp -vp ~/System/configs/pcmanfm.conf ~/.config/pcmanfm/lubuntu/pcmanfm.conf
+cp -vp ~/System/configs/desktop.dockitem ~/.config/plank/dock1/launchers/desktop.dockitem
+cp -vp ~/System/configs/lxterminal.dockitem ~/.config/plank/dock1/launchers/lxterminal.dockitem
+cp -vp ~/System/configs/pcmanfm.dockitem ~/.config/plank/dock1/launchers/pcmanfm.dockitem
+cp -vp ~/System/configs/slingscold.dockitem ~/.config/plank/dock1/launchers/slingscold.dockitem
+cp -vp ~/System/configs/sublime_text.dockitem ~/.config/plank/dock1/launchers/sublime_text.dockitem
+cp -vp ~/System/configs/trash.dockitem ~/.config/plank/dock1/launchers/trash.dockitem
+cp -vp ~/System/icons-png/jason.png ~/Public/jason.png
+cp -vpr ~/System/bin* ~/
+sudo mkdir /usr/local/share/applications
+sudo cp -vp ~/System/dot-desktops/* /usr/local/share/applications/
+cp -vp ~/System/Launchers/* ~/.local/share/applications/
+sudo cp -vp ~/System/icons-png/menu-ubuntu.png /usr/share/lubuntu/images/
+
+
+whiptail --yesno "Do you want to reboot now?" --yes-button "Yes, I do" --no-button "No, I will do that latter"  10 80
+CHOICE=$?
+if [[ $CHOICE == 0 ]]; then
+    echo "Yes"
+    echo "reboot"
+    sleep 3
+    reboot
+elif [[ $CHOICE == 1 ]]; then
+    echo "No, Okay reboot as soon as you can."
+fi
