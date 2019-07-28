@@ -8,7 +8,7 @@ sudo apt-get -y install timeshift
 
 timeshift-launcher 2> /dev/null
 
-whiptail --yesno "Did you enable a snapshot of all files (/ and /home)? Did you create a full snapshot with Timeshift? You should! Timeshift can create a snapshot so that you can rolback the changes this script will be making! Do you want to continue:" --yes-button "Yes, I do" --no-button "No, I want to abort script!"  10 90
+whiptail --yesno "Did you enable a snapshot of all files (/ and /home)? Did you create a full snapshot with Timeshift? You should! Timeshift can create a snapshot so that you can rolback the changes this script will be making! Do you want to continue:" --yes-button "Yes, I do" --no-button "No, I want to abort script!"  13 90
 CHOICE=$?
 if [[ $CHOICE == 0 ]]; then
     echo "Yes"
