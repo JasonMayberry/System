@@ -7,8 +7,8 @@ Use wget to download Lubuntu-Setup in the present working directory
 Give it execution permission  
 `chmod 755 install-lubuntu-setup`  
 Run the Script  
-`sudo ./install-lubuntu-setup`  
+`./install-lubuntu-setup`  
   
-Or try runing it without sudo:
+Or just paste it in all together:
 `wget https://raw.githubusercontent.com/JasonMayberry/System/master/install-lubuntu-setup; chmod 755 install-lubuntu-setup; ./install-lubuntu-setup`  
   
