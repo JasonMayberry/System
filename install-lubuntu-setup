@@ -143,6 +143,9 @@ sudo cp -vp ~/System/dot-desktops/* /usr/local/share/applications/
 cp -vp ~/System/Launchers/* ~/.local/share/applications/
 sudo cp -vp ~/System/icons-png/menu-ubuntu.png /usr/share/lubuntu/images/
 
+# Update root account
+cp /home/jason/.vimrc /root/
+cp /home/jason/.bash_aliases /root/
 
 whiptail --yesno "Do you want to reboot now?" --yes-button "Yes, I do" --no-button "No, I will do that latter"  10 80
 CHOICE=$?
