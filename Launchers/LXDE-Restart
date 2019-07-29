@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=lxpanelctl restart && openbox --restart
+Terminal=true
+Comment[en_US]=lxpanelctl restart && openbox --restart
+GenericName=lxpanelctl restart && openbox --restart
+Icon=xfce4-mixer
