@@ -49,7 +49,7 @@ sudo apt install -y gedit gedit-plugins vim-gtk3
 # Games
 sudo apt install -y chromium-bsu quadrapassel 
 # Graphics
-sudo apt install -y converseen geeqie gimp gimp-data-extras gimp-gmic gimp-help-en gimp-plugin-registry gthumb inkscape openclipart-libreoffice openclipart-png gnome-screenshot photocollage 
+sudo apt install -y converseen flameshot geeqie gimp gimp-data-extras gimp-gmic gimp-help-en gimp-plugin-registry gthumb inkscape openclipart-libreoffice openclipart-png gnome-screenshot photocollage 
 # Multimedia
 sudo apt install -y vlc-bin simplescreenrecorder 
 # Terminal only
