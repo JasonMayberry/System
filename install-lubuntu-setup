@@ -95,6 +95,12 @@ sudo apt -y autoremove
 # Settings
 sudo ufw enable # enable the firewall
 
+# Disable a few unnecessary launchers
+sudo mkdir /usr/share/applications/Disabled
+sudo mv /usr/share/applications/mtpaint.desktop /usr/share/applications/Disabled/mtpaint.desktop.bak
+sudo mv /usr/share/applications/flameshot-init.desktop /usr/share/applications/Disabled/flameshot-init.desktop.bak
+sudo mv /usr/share/applications/flameshot-config.desktop /usr/share/applications/Disabled/flameshot-config.desktop.bak
+
 git clone https://github.com/JasonMayberry/System # Download Lubuntu-Setup
 # Install Lubuntu-Setup
 cp -vp ~/System/configs/.bash_aliases ~/.bash_aliases
