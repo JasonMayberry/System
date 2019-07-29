@@ -157,3 +157,13 @@ if [[ $CHOICE == 0 ]]; then
 elif [[ $CHOICE == 1 ]]; then
     echo "No, Okay reboot as soon as you can."
 fi
+
+# Other Info and Notes:
+# flameshot launch command: flameshot gui
+# flameshot file names: Screenshot_%Y-%m-%d_%I.%M.%S-%p
+# flameshot Hot-keys: Shift + alt + 5
+
+
+
+
+
