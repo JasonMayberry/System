@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo ""
+cal
+# echo ""
+dateTime=$(date +%l:%M_%p)
+echo "The time is now$dateTime"
+echo ""
