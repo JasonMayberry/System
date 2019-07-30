@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=doc.sh
+Terminal=true
+GenericName=Creates a PDF out of your or photos.
+Comment[en_US]=Creates a PDF out of your or photos.
+Icon=evince
