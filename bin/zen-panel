@@ -1,0 +1,62 @@
+#!/bin/bash
+
+
+# option variables can NOT have spaces
+option_1='Use:_No-Panel'
+option_2='Use:_Basic-Tools'
+option_3='Use:_Programing'
+option_4='Use:_Wild-Card'
+option_5='Save_current_panel_state_as_No-Panel'
+option_6='Save_current_panel_state_as_Basic-Tools'
+option_7='Save_current_panel_state_as_Programing'
+option_8='Save_current_panel_state_as_Wild-Card'
+option_9='Restore_the_panel_to_original_Default'
+
+if [[ -d ~/.config/myconfigs ]]; then
+    echo "Saves will be here: ~/.config/myconfigs"
+else
+    mkdir ~/.config/myconfigs
+fi
+
+
+state=$(zenity --list --title="Bash Options" --column="0" $option_1 $option_2 $option_3 $option_4 $option_5 $option_6 $option_7 $option_8 $option_9 --width=100 --height=300 --hide-header 2> /dev/null)
+
+    case $state in
+        $option_1)
+            cp ~/.config/myconfigs/panel.no-panel ~/.config/lxpanel/Lubuntu/panels/panel
+            lxpanelctl restart
+            ;;
+        $option_2)
+            cp ~/.config/myconfigs/panel.basic-tools ~/.config/lxpanel/Lubuntu/panels/panel
+            lxpanelctl restart
+            ;;
+        $option_3)
+            cp ~/.config/myconfigs/panel.programing ~/.config/lxpanel/Lubuntu/panels/panel
+            lxpanelctl restart
+            ;;
+        $option_4)
+            cp ~/.config/myconfigs/panel.wild-card ~/.config/lxpanel/Lubuntu/panels/panel
+            lxpanelctl restart
+            ;;
+        $option_5)
+            cp ~/.config/lxpanel/Lubuntu/panels/panel ~/.config/myconfigs/panel.no-panel
+            ;;
+        $option_6)
+            cp ~/.config/lxpanel/Lubuntu/panels/panel ~/.config/myconfigs/panel.basic-tools
+            ;;
+        $option_7)
+            cp ~/.config/lxpanel/Lubuntu/panels/panel ~/.config/myconfigs/panel.programing
+            ;;
+        $option_8)
+            cp ~/.config/lxpanel/Lubuntu/panels/panel ~/.config/myconfigs/panel.wild-card
+            ;;
+        $option_9)
+            rm -rf ~/.config/lxpanel/Lubuntu/panels/*
+            lxpanelctl restart
+            ;;
+        # Matching with invalid data
+        *)
+			echo "Cancel"
+            ;;
+    esac
+exit 0
