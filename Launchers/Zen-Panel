@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=zen-panel.sh
+Terminal=false
+GenericName=Save and use Panel Presets
+Comment[en_US]=Save and use Panel Presets
+Icon=gnome-settings-theme
