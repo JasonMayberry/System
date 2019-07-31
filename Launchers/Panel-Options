@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=panel-options.sh
+Icon=khelpcenter
+Terminal=true
+X-KeepTerminal=true
