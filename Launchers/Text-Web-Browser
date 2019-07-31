@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name[en_US]=Text-Web-Browser
+Exec=gnome-terminal --hide-menubar --geometry=200x100 -t View-Files -- links https://www.google.com
+GenericName=Text-Web-Browser
+Comment[en_US]=Text-Web-Browser
+Icon=www-browser
