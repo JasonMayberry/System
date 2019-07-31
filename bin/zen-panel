@@ -19,7 +19,7 @@ else
 fi
 
 
-state=$(zenity --list --title="Bash Options" --column="0" $option_1 $option_2 $option_3 $option_4 $option_5 $option_6 $option_7 $option_8 $option_9 --width=100 --height=300 --hide-header 2> /dev/null)
+state=$(zenity --list --title="Bash Options" --column="1" $option_1 $option_2 $option_3 $option_4 $option_5 $option_6 $option_7 $option_8 $option_9 --width=400 --height=400 --hide-header 2> /dev/null)
 
     case $state in
         $option_1)
