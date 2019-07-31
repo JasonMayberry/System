@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal --hide-menubar --geometry=200x100 -t View-Files -- links2 file://
+GenericName=File Viewer
+Comment[en_US]=File Viewer
+Icon=search
