@@ -93,7 +93,7 @@ sudo apt-get -y install ubuntu-wallpapers-* edgy-wallpapers feisty-wallpapers gu
 # theme is copied to /usr/share/themes/ or /usr/share/icons/
 # https://www.gnome-look.org/content/show.php/Mona+1.0+-+Dark+and+blue+GTK+theme?content=168447
 # Use faenza-icon-theme with "Mona 3.0" for a mint like theme
-sudo apt install faenza-icon-theme
+sudo apt install -y faenza-icon-theme
 
 sudo apt -y autoremove
 
