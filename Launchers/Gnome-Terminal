@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name[en_US]=Gnome-Terminal
+Exec=gnome-terminal
+GenericName=gnome-terminal
+Comment[en_US]=gnome-terminal
+Icon=terminal
