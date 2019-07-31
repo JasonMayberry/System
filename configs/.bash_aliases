@@ -75,6 +75,7 @@ alias clsa='printf "\033c"' # Clear screen (all)
 alias cls='clear' # Clear screen
 
 # Files
+alias vf='links2 -g file://' # View files point and click (cd to the dir you want to see)
 # Open File Manager
 alias files='pcmanfm' # thunar (Case or if would be good here)
 # Open File Manager as admin
