@@ -75,7 +75,7 @@ alias clsa='printf "\033c"' # Clear screen (all)
 alias cls='clear' # Clear screen
 
 # Files
-alias vf='lxterminal -e links file:// 2> /dev/null' # View files point and click (cd to the dir you want to see)
+alias vf='lxterminal --geometry=200x100 -t View-Files -e links file:// 2> /dev/null' # View files point and click (cd to the dir you want to see)
 # Open File Manager
 alias files='pcmanfm' # thunar (Case or if would be good here)
 # Open File Manager as admin
