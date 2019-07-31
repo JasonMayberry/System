@@ -60,11 +60,6 @@ sudo apt install -y brasero gufw sysinfo gparted
 sudo apt-get -y install ubuntu-wallpapers-* edgy-wallpapers feisty-wallpapers gutsy-wallpapers 
 
 # Theme
-# theme is copied to /usr/share/themes/ or /usr/share/icons/
-# https://www.gnome-look.org/content/show.php/Mona+1.0+-+Dark+and+blue+GTK+theme?content=168447
-# Use faenza-icon-theme with "Mona 3.0" for a mint like theme
-sudo apt install faenza-icon-theme
-
 # Add plank to dock field and manual auto start
 # Press "Ctrl + Right Click" on the plank to access context menu.
 # plank --preferences # in terminal
@@ -94,6 +89,11 @@ sudo apt install faenza-icon-theme
 # Once gnome-tweak-tools is installed, you can run it from the terminal writing:
 # gnome-tweaks # in terminal
 # You can change fonts from Unity-Tweak-Tool, Gnome-Tweak-Tool.
+
+# theme is copied to /usr/share/themes/ or /usr/share/icons/
+# https://www.gnome-look.org/content/show.php/Mona+1.0+-+Dark+and+blue+GTK+theme?content=168447
+# Use faenza-icon-theme with "Mona 3.0" for a mint like theme
+sudo apt install faenza-icon-theme
 
 sudo apt -y autoremove
 
