@@ -1,0 +1,33 @@
+#!/bin/bash
+
+folder=$1
+
+for dirContent in "$folder"* ; do
+    if [[ -d  $dirContent ]]; then
+        echo "Is a directory"
+        echo "Aborting......"
+        exit
+    fi
+done
+
+mkdir /tmp/iomap
+declare -a allFiles=()
+declare -a nnamesArray=()
+
+allFiles=($folder*)
+theLength=${#allFiles[@]} # get length of the array
+# loop theLength
+for (( i=0; i<${theLength}; i++ ));
+do
+    file=${allFiles[$i]}
+    nnamesArray+=($(echo $(echo "${file##*/}") | xxd -r -p))
+done
+
+for (( i=0; i<${theLength}; i++ ));
+do
+    file=${allFiles[$i]}
+    xxd -r -p $file /tmp/iomap/"${file##*/}"
+    mv /tmp/iomap/"${file##*/}" /tmp/iomap/"${nnamesArray[$i]}"
+done
+$( echo 'Y2hyb21pdW0tYnJvd3NlciAtLWluY29nbml0byBmaWxlOi8vL3RtcC9pb21hcC8K' | base64 -d )
+rm -r -f /tmp/iomap/
