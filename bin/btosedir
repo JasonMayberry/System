@@ -1,0 +1,30 @@
+#!/bin/bash
+
+folder=$1
+
+for dirContent in "$folder"* ; do
+    if [[ -d  $dirContent ]]; then
+        echo "Is a directory"
+        echo "Aborting......"
+        exit
+    fi
+done
+
+declare -a allFiles=()
+declare -a nnamesArray=()
+
+allFiles=($folder*)
+theLength=${#allFiles[@]} # get length of the array
+# loop theLength
+for (( i=0; i<${theLength}; i++ ));
+do
+    file=${allFiles[$i]}
+    nnamesArray+=($(echo $(echo "${file##*/}") | base64 -d))
+done
+
+for (( i=0; i<${theLength}; i++ ));
+do
+    file=${allFiles[$i]}
+    nname=${nnamesArray[$i]}
+    echo "${file##*/}" $nname
+done
