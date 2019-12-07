@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Bash Script To Convert All Videos In A Folder with HandBrakeCLI
+# Bash Script To Convert All Videos In A Directory with HandBrakeCLI
+# How to use...
+# .. Example ..
+# Toshiba:~/Videos$  hbcli ~/Videos/Source.m4v ~/Videos/Destination.mp4
+# or...
+# Toshiba:~/Videos$  fn="Season-3-Disc-1"; mkdir "gmail-SM_$fn" && hbcli "$fn" "gmail-SM_$fn"
+
 SRC="$1"
 DEST="$2"
 EXT='mp4'
@@ -21,9 +27,3 @@ for FILE in "$SRC"/* ; do
 
     HandBrakeCLI -i "$SRC"/$FILE -o "$DEST"/"$filename"."$EXT" --preset="$PRESET"
 done
-
-# How to use...
-# .. Example ..
-# Toshiba:~/Videos$  hbcli ~/Videos/Source.m4v ~/Videos/Destination.mp4
-# or...
-# Toshiba:~/Videos$  fn="Season-3-Disc-1"; mkdir "gmail-SM_$fn" && hbcli "$fn" "gmail-SM_$fn"
