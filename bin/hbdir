@@ -3,7 +3,7 @@
 # Bash Script To Convert All Videos In A Directory with HandBrakeCLI
 # How to use...
 # .. Example ..
-# Toshiba:~/Videos$  hbcli ~/Videos/Source.m4v ~/Videos/Destination.mp4
+# Toshiba:~/Videos$  hbdir ~/Videos/Source.m4v ~/Videos/Destination.mp4
 # or...
 # Toshiba:~/Videos$  fn="Season-3-Disc-1"; mkdir "gmail-SM_$fn" && hbcli "$fn" "gmail-SM_$fn"
 
