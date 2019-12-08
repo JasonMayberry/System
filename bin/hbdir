@@ -26,4 +26,6 @@ for FILE in "$SRC"/* ; do
     filename=${filename%.*}
 
     HandBrakeCLI -i "$SRC"/$FILE -o "$DEST"/"$filename"."$EXT" --preset="$PRESET"
+    # sleep 1m
+    # sleep 10m
 done
