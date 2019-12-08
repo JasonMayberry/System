@@ -25,7 +25,7 @@ for FILE in "$SRC"/* ; do
     extension=${filename##*.}
     filename=${filename%.*}
 
-    HandBrakeCLI -i "$SRC"/$FILE -o "$DEST"/"$filename"."$EXT" --preset="$PRESET"
+    HandBrakeCLI -i "$SRC"/"$FILE" -o "$DEST"/"$filename"."$EXT" --preset="$PRESET"
     # sleep 1m
     # sleep 10m
 done
