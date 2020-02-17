@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Bash Script To Convert All Videos In A Directory with HandBrakeCLI
-# How to use...
-# .. Example ..
-# Toshiba:~/Videos$  hbdir ~/Videos/Source.m4v ~/Videos/Destination.mp4
-# or...
-# Toshiba:~/Videos$  fn="Season-3-Disc-1"; mkdir "gmail-SM_$fn" && hbcli "$fn" "gmail-SM_$fn"
-
+# Bash Script To Convert All Videos In A Folder with HandBrakeCLI
 SRC="$1"
 DEST="$2"
 EXT='mp4'
@@ -26,6 +20,34 @@ for FILE in "$SRC"/* ; do
     filename=${filename%.*}
 
     HandBrakeCLI -i "$SRC"/"$FILE" -o "$DEST"/"$filename"."$EXT" --preset="$PRESET"
-    # sleep 1m
     # sleep 10m
+    sleep 2m
 done
+
+# How to use...
+# .. Example-1 ..
+# Toshiba:~/Videos$  hbcli ~/Videos/Source.m4v ~/Videos/Destination.mp4
+# or...
+# Toshiba:~/Videos$  fn="Season-3-Disc-1"; mkdir "gmail-SM_$fn" && hbcli "$fn" "gmail-SM_$fn"
+
+
+# How to use...
+# .. Example-2 ..
+# Write a script like this!!!
+
+#!/bin/bash
+
+# fn=Season-1-Disc-1; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-2-Disc-2; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-2-Disc-3; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-2-Disc-4; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-3-Disc-1; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-3-Disc-2; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+# sleep 3m
+# fn=Season-3-Disc-3; mkdir ~/Videos/Seinfeld/gmail-SM_$fn && hbcli $fn ~/Videos/Seinfeld/gmail-SM_$fn
+
