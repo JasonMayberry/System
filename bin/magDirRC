@@ -4,8 +4,8 @@ function ask() {
 	ls
 	pwd
 	echo ""
-	echo "This Script will replace all spaces in file or folder names, recursively"
-	echo "in the present working directory and all sub-directories."
+	echo "This Script will replace all spaces with underscores in file or folder names,"
+	echo " recursively in the present working directory and in all sub-directories."
 	echo ""
 	echo "A reduced quality .jpg will be placed beside the .png it was created from!"
 	echo ""
