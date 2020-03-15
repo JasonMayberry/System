@@ -38,7 +38,7 @@ function ask() {
 
 	if [[ ( "$reply" != 'y' ) && ( "$reply" != 'n' ) ]]; then
         echo "#######################"
-		echo "### Invalid Answer  ###"
+	echo "### Invalid Answer  ###"
         echo "#######################"
 		ask
 	fi
