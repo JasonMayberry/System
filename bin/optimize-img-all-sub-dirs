@@ -14,7 +14,7 @@ function ask() {
 	echo "sudo apt-get install imagemagick"
 	echo "sudo apt install rename"
 	echo ""
-	echo "Would you like to run magDirRC now?"
+	echo "Would you like to run optimize-img-all-sub-dirs now?"
 	echo "( y = Yes | n = No )"
 	read reply
 
