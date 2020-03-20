@@ -1,0 +1,93 @@
+#!/bin/bash
+
+function askOptimize() {
+	ls
+	pwd
+	echo "A PDF made from Optimized images is better than running compress-pdf on it later."
+	echo ""
+	echo "   A resized, reduced quality \"Optimized\" image folder will be placed beside"
+	echo "the current folder of images which should be your present working directory now"
+	echo ".jpg images will be optimized but all files in the PWD will be copied to a new folder"
+	echo ""
+	echo "It Depends on 'imagemagick' and 'rename':"
+	echo "sudo apt-get update && apt-get upgrade"
+	echo "sudo apt-get install imagemagick"
+	echo "sudo apt install rename"
+	echo ""
+	echo "To RUN  jpg-optimize & create a .pdf from all .jpg in a new optimized dir enter y"
+	echo "To SKIP jpg-optimize & create a .pdf from all .jpg in this dir enter n"
+	echo "( y = Yes | n = No )"
+	read reply
+
+	if [ "$reply" == 'y' ]; then
+        
+        	mkdir ../Optimized
+        	cp -R ./* ../Optimized
+        	cd ../Optimized
+
+		# Depends on "sudo apt install rename"
+		# Replaces all spaces in file or folder names recursively in the present working directory and all sub-directories
+		find -depth -name "* *" -execdir rename 's/ /_/g' "{}" \;
+
+
+		# Depends on "sudo apt-get install imagemagick"
+		# In most cases reduces .jpg file size in the present working directory and all sub-directories
+        	#
+        	# 2550 pixels wide (300 pixels/inch * 8.5 inches)
+        	# 1275 pixels wide (150 pixels/inch * 8.5 inches)
+        	# 638   pixels wide (75 pixels/inch * 8.5 inches)
+		for photos in $(find . -name "*.jpg");do convert -verbose "$photos" -resize "1275>" -quality 75% "$photos"; done
+	fi
+
+	if [ "$reply" == 'n' ]; then
+	    echo "No, Skip Optimizing"
+	fi
+
+	if [[ ( "$reply" != 'y' ) && ( "$reply" != 'n' ) ]]; then
+        echo "#######################"
+	echo "### Invalid Answer  ###"
+        echo "#######################"
+		ask
+	fi
+}
+
+
+
+
+function askOCR() {
+	echo ""
+	echo "Ready to create a PDF in: \"$PWD\""
+	echo ""
+	echo "It Depends on 'imagemagick', 'rename' and 'ocrmypdf':"
+	echo "sudo apt-get update && apt-get upgrade"
+	echo "sudo apt-get install imagemagick"
+	echo "sudo apt install rename"
+	echo "sudo apt install ocrmypdf"
+	echo ""
+	echo "To Create a .pdf from all .jpg in this dir enter p"
+	echo "To Create a OCR .pdf from all .jpg in this dir enter o"
+	echo "( p = Plain PDf | o = OCR) | ( Ctrl+C = Abort )"
+	read reply
+
+	if [ "$reply" == 'p' ]; then
+		convert *.jpg newjpgto.pdf
+	fi
+
+	if [ "$reply" == 'o' ]; then
+	    convert *.jpg newjpgto.pdf
+	    ocrmypdf newjpgto.pdf newOCRjpgto.pdf
+	    rm newjpgto.pdf
+	fi
+
+	if [[ ( "$reply" != 'p' ) && ( "$reply" != 'o' ) ]]; then
+        echo "#######################"
+        echo "### Invalid Answer  ###"
+        echo "#######################"
+		ask
+	fi
+}
+
+
+
+askOptimize
+askOCR
