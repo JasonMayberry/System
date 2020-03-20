@@ -2,7 +2,7 @@
 
 function ask() {
 	echo ""
-	echo "Ready to convert text in .jpg's to plain text file in: \"$PWD\""
+	echo "Ready to convert text in .jpg's to a new plain text file that will placed in: \"$PWD\""
 	echo ""
 	echo "It Depends on 'imagemagick', 'rename', 'ocrmypdf' and 'pdftotext' from the 'poppler-utils' pkg:"
 	echo "sudo apt-get update && apt-get upgrade"
