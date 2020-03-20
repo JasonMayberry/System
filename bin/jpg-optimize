@@ -5,8 +5,8 @@ function ask() {
 	pwd
 	echo ""
 	echo "   A resized, reduced quality \"Optimized\" image folder will be placed beside"
-    echo "the current folder of images which should be your present working directory now"
-    echo ".jpg images will be optimized but all files in the PWD will be copied to a new folder"
+	echo "the current folder of images which should be your present working directory now"
+	echo ".jpg images will be optimized but all files in the PWD will be copied to a new folder"
 	echo ""
 	echo "It Depends on 'imagemagick' and 'rename':"
 	echo "sudo apt-get update && apt-get upgrade"
@@ -19,9 +19,9 @@ function ask() {
 
 	if [ "$reply" == 'y' ]; then
         
-        mkdir ../Optimized
-        cp -R ./* ../Optimized
-        cd ../Optimized
+        	mkdir ../Optimized
+        	cp -R ./* ../Optimized
+        	cd ../Optimized
 
 		# Depends on "sudo apt install rename"
 		# Replaces all spaces in file or folder names recursively in the present working directory and all sub-directories
@@ -30,10 +30,10 @@ function ask() {
 
 		# Depends on "sudo apt-get install imagemagick"
 		# In most cases reduces .jpg file size in the present working directory and all sub-directories
-        #
-        # 2550 pixels wide (300 pixels/inch * 8.5 inches)
-        # 1275 pixels wide (150 pixels/inch * 8.5 inches)
-        # 638   pixels wide (75 pixels/inch * 8.5 inches)
+        	#
+        	# 2550 pixels wide (300 pixels/inch * 8.5 inches)
+        	# 1275 pixels wide (150 pixels/inch * 8.5 inches)
+        	# 638   pixels wide (75 pixels/inch * 8.5 inches)
 		for photos in $(find . -name "*.jpg");do convert -verbose "$photos" -resize "1275>" -quality 75% "$photos"; done
 	fi
 
