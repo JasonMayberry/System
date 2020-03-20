@@ -1,0 +1,40 @@
+#!/bin/bash
+
+function ask() {
+	echo ""
+	echo "Ready to convert text in .jpg's to plain text file in: \"$PWD\""
+	echo ""
+	echo "It Depends on 'imagemagick', 'rename', 'ocrmypdf' and 'pdftotext' from the 'poppler-utils' pkg:"
+	echo "sudo apt-get update && apt-get upgrade"
+	echo "sudo apt-get install imagemagick"
+	echo "sudo apt install rename"
+	echo "sudo apt install ocrmypdf"
+	echo "sudo apt install poppler-utils"
+	echo ""
+	echo "To Create the plain text file: \"$PWD/jpgtotext.txt\" from all .jpg's in this folder enter y"
+	echo "To Abort enter n"
+	echo "( y = Yes | n = No )"
+	read reply
+
+	if [ "$reply" == 'y' ]; then
+		convert *.jpg newjpgto.pdf
+	    ocrmypdf newjpgto.pdf newOCRjpgto.pdf
+	    pdftotext newOCRjpgto.pdf jpgtotext.txt
+	    rm newjpgto.pdf
+	    rm newOCRjpgto.pdf
+	fi
+
+	if [ "$reply" == 'n' ]; then
+	    echo "No, Aborting"
+	fi
+
+	if [[ ( "$reply" != 'y' ) && ( "$reply" != 'n' ) ]]; then
+        echo "#######################"
+        echo "### Invalid Answer  ###"
+        echo "#######################"
+		ask
+	fi
+}
+
+ask
+
