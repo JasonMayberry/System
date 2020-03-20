@@ -17,7 +17,7 @@ function ask() {
 	read reply
 
 	if [ "$reply" == 'y' ]; then
-		convert *.jpg newjpgto.pdf
+	    convert *.jpg newjpgto.pdf
 	    ocrmypdf newjpgto.pdf newOCRjpgto.pdf
 	    pdftotext newOCRjpgto.pdf jpgtotext.txt
 	    rm newjpgto.pdf
